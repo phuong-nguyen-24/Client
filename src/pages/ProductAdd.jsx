@@ -12,9 +12,8 @@ export default function ProductAdd() {
   } = useForm();
 
   const addProductMutation = useMutation({
-    mutationFn: (newProduct) =>
-      axios.post("http://localhost:4000/product/add", newProduct),
-      onSuccess: () =>  reset()
+    mutationFn: (newProduct) => axios.post("/product/add", newProduct),
+    onSuccess: () => reset(),
   });
 
   function onSubmit(data) {
@@ -78,7 +77,7 @@ export default function ProductAdd() {
 
         <div className="w-full lg:w-auto px-2">
           <button className="block py-5 px-10 h-full w-full xl:w-auto text-xl text-white font-medium tracking-tighter font-heading bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl">
-          {addProductMutation.isLoading ? "Adding..." : "Add Product"}
+            {addProductMutation.isLoading ? "Adding..." : "Add Product"}
           </button>
         </div>
       </div>

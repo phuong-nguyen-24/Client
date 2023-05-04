@@ -11,12 +11,11 @@ export default function ProductDetail() {
     error,
   } = useQuery({
     queryKey: ["products", productId],
-    queryFn: () => axios.get(`http://localhost:4000/product/${productId}`),
+    queryFn: () => axios.get(`/product/${productId}`),
     select: (res) => res.data,
   });
 
   if (isLoading) return <div>Loading....</div>;
-  
 
   const { title, description, price, category, thumbnail } = product;
 

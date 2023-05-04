@@ -10,7 +10,7 @@ export default function Products() {
     error,
   } = useQuery({
     queryKey: ["products"],
-    queryFn: () => axios.get("http://localhost:4000/product"),
+    queryFn: () => axios.get("/product"),
     select: (res) => res.data,
   });
 
@@ -19,7 +19,7 @@ export default function Products() {
   const [q, setQ] = useState("");
 
   function handleSearch() {
-    axios.get(`http://localhost:4000/product/search?q=${q}`)
+    axios.get(`/product/search?q=${q}`);
   }
 
   return (

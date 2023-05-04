@@ -18,6 +18,11 @@ import ProductDetail from "./pages/ProductDetail";
 import ProductAdd from "./pages/ProductAdd";
 import ProductEdit from "./pages/ProductEdit";
 import RootLayout from "./components/RootLayout";
+import axios from "axios";
+
+
+axios.defaults.baseURL = 'https://api.example.com';
+
 
 const queryClient = new QueryClient();
 
